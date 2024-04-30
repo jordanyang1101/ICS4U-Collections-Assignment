@@ -1,1 +1,93 @@
+import java.util.ArrayList;
+import java.util.LinkedList;
+import java.util.HashSet;
+import java.util.PriorityQueue;
+import java.util.HashMap;
+import java.util.Map;
+import java.util.Queue;
+import java.util.Set;
 
+
+public class CollectionsDemonstrator {
+    public static void main(String[] args){
+        ArrayListDemo();
+        LinkedSetsDemo();
+        SetsDemo();
+        QueuesDemo();
+        MapsDemo();
+    }
+
+    public static void ArrayListDemo(){
+        System.out.println();
+        System.out.println("ArrayListDemo");
+
+        ArrayList<String> arrayList = new ArrayList<>();
+
+        arrayList.add("Jordan");
+        arrayList.add("Vinit");
+        arrayList.add("Harry");
+        arrayList.add("Mrs. Luce");
+        System.out.println(arrayList);
+        System.out.println("ArrayList contains Jordan: " + arrayList.contains("Jordan"));
+        System.out.println("Names in arrayList: " + arrayList.size());
+        System.out.println("First name is " + arrayList.getFirst());
+        System.out.println("Second name is " + arrayList.get(1));
+        System.out.println("Second last name is " + arrayList.get(arrayList.size()-2));
+        arrayList.removeLast();
+        System.out.println("ArrayList with last name removed: " + arrayList);
+    }
+
+    public static void LinkedSetsDemo(){
+        System.out.println();
+        System.out.println("LinkedSetsDemo");
+        LinkedList<Double> linkedList = new LinkedList<>();
+
+        linkedList.add(4.56);
+        linkedList.addFirst(1.23);
+        linkedList.add(7.89);
+
+        for(double num : linkedList) {
+            System.out.print(num + " ");
+        }
+
+        System.out.println(linkedList);
+        System.out.println("LinkedList is empty: " + linkedList.isEmpty());
+        linkedList.removeFirst();
+        System.out.println("LinkedList after removing the first element: " + linkedList);
+    }
+
+    public static void SetsDemo(){
+        System.out.println("");
+        System.out.println("SetsDemo");
+        Set<Integer> set = new HashSet<>();
+
+        set.add(1);
+        set.add(2);
+        set.add(3);
+
+        System.out.println("First set: " + set);
+        System.out.println("Set contains 4: " + set.contains(4));
+        set.add(1);
+        System.out.println("Set with duplicate added: " + set);
+
+        Set<Integer> set2 = new HashSet<>();
+        set2.add(3);
+        set2.add(4);
+        set2.add(5);
+
+        System.out.println("Second set: " + set2);
+        //System.out.println("Common elemnts: " + !Collections.disjoint(set, set2));
+        System.out.println("Size of second set: " + set2.size());
+
+        set.clear();
+        System.out.println("Set when cleared: " + set);
+    }
+
+    public static void QueuesDemo(){
+
+    }
+
+    public static void MapsDemo(){
+
+    }
+}
