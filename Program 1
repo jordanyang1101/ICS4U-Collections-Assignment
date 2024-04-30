@@ -11,7 +11,7 @@ import java.util.Set;
 public class CollectionsDemonstrator {
     public static void main(String[] args){
         ArrayListDemo();
-        LinkedSetsDemo();
+        LinkedListsDemo();
         SetsDemo();
         QueuesDemo();
         MapsDemo();
@@ -27,7 +27,9 @@ public class CollectionsDemonstrator {
         arrayList.add("Vinit");
         arrayList.add("Harry");
         arrayList.add("Mrs. Luce");
+        System.out.println("Printing List");
         System.out.println(arrayList);
+
         System.out.println("ArrayList contains Jordan: " + arrayList.contains("Jordan"));
         System.out.println("Names in arrayList: " + arrayList.size());
         System.out.println("First name is " + arrayList.getFirst());
@@ -37,7 +39,7 @@ public class CollectionsDemonstrator {
         System.out.println("ArrayList with last name removed: " + arrayList);
     }
 
-    public static void LinkedSetsDemo(){
+    public static void LinkedListsDemo(){
         System.out.println();
         System.out.println("LinkedSetsDemo");
         LinkedList<Double> linkedList = new LinkedList<>();
@@ -46,6 +48,9 @@ public class CollectionsDemonstrator {
         linkedList.addFirst(1.23);
         linkedList.add(7.89);
 
+        System.out.println(linkedList);
+
+        System.out.println("Printing formatted List");
         for(double num : linkedList) {
             System.out.print(num + " ");
         }
@@ -97,6 +102,8 @@ public class CollectionsDemonstrator {
         queue.offer("Testing");
         queue.offer("Maintenance");
 
+        System.out.println(queue);
+
         System.out.println("Is the queue empty: " + queue.isEmpty());
         System.out.println("Size of queue: " + queue.size());
         System.out.println("Head of queue: " + queue.poll());
@@ -111,6 +118,8 @@ public class CollectionsDemonstrator {
         map.put("One", 1);
         map.put("Two", 2);
         map.put("Three", 3);
+
+        System.out.println(map);
 
         System.out.println("Value of key 'One': " + map.get("One"));
         System.out.println("Map contains key 'Two': " + map.containsKey("Two"));
