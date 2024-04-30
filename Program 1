@@ -49,15 +49,15 @@ public class CollectionsDemonstrator {
         for(double num : linkedList) {
             System.out.print(num + " ");
         }
+        System.out.println();
 
-        System.out.println(linkedList);
         System.out.println("LinkedList is empty: " + linkedList.isEmpty());
         linkedList.removeFirst();
         System.out.println("LinkedList after removing the first element: " + linkedList);
     }
 
     public static void SetsDemo(){
-        System.out.println("");
+        System.out.println();
         System.out.println("SetsDemo");
         Set<Integer> set = new HashSet<>();
 
@@ -76,7 +76,10 @@ public class CollectionsDemonstrator {
         set2.add(5);
 
         System.out.println("Second set: " + set2);
-        //System.out.println("Common elemnts: " + !Collections.disjoint(set, set2));
+
+        Set<Integer> set3 = new HashSet<>(set);
+        set3.retainAll(set2);
+        System.out.println("Common elements: " + set3);
         System.out.println("Size of second set: " + set2.size());
 
         set.clear();
@@ -84,10 +87,36 @@ public class CollectionsDemonstrator {
     }
 
     public static void QueuesDemo(){
+        System.out.println();
+        System.out.println("QueueDemo");
 
+        Queue<String> queue = new PriorityQueue<>();
+        queue.offer("Analyze requirements");
+        queue.offer("Design");
+        queue.offer("Implement");
+        queue.offer("Testing");
+        queue.offer("Maintenance");
+
+        System.out.println("Is the queue empty: " + queue.isEmpty());
+        System.out.println("Size of queue: " + queue.size());
+        System.out.println("Head of queue: " + queue.poll());
+        System.out.println("Peek of queue: " + queue.peek());
     }
 
     public static void MapsDemo(){
+        System.out.println();
+        System.out.println("MapsDemo");
 
+        Map<String, Integer> map = new HashMap<>();
+        map.put("One", 1);
+        map.put("Two", 2);
+        map.put("Three", 3);
+
+        System.out.println("Value of key 'One': " + map.get("One"));
+        System.out.println("Map contains key 'Two': " + map.containsKey("Two"));
+        map.remove("Three");
+        System.out.println("Map with key 'Three' removed: " + map);
+        Set<String> keySet = map.keySet();
+        System.out.println("Keys in map: " + keySet);
     }
 }
