@@ -1,0 +1,22 @@
+import java.util.HashMap;
+import java.util.Map;
+
+public class Candidate {
+    private String name;
+    private int ID;
+    private int numVotes = 0;
+
+    //Map<String, Integer> votes = new HashMap<>();
+
+    public Candidate(String name, int ID){
+        this.name = name;
+        this.ID = ID;
+        this.numVotes = 0;
+
+
+    }
+
+
+
+
+}
