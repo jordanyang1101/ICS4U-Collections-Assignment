@@ -1,0 +1,14 @@
+import java.util.HashMap;
+import java.util.Map;
+
+
+public class Main {
+    public static void main(String[] args){
+    Candidate Darek = new Candidate( "Harry",1);
+    Candidate Brendan = new Candidate( "Jordan",2);
+    Candidate Cindy = new Candidate( "Vinit",3);
+
+    Map<Candidate, Integer> votes = new HashMap<>();
+    }
+}
+
