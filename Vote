@@ -1,0 +1,23 @@
+import java.util.Scanner;
+
+public class Vote {
+    Scanner input = new Scanner(System.in);
+    public void getVote(){
+        System.out.println("Who do you want to vote for? ");
+        String choice = input.nextLine();
+        switch(choice){
+            case "1":
+
+                break;
+            case "2":
+
+                break;
+            case "3":
+
+                break;
+            default:
+                System.out.println("Invalid choice");
+
+        }
+    }
+}
