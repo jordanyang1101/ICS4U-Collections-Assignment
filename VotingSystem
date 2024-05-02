@@ -1,13 +1,16 @@
+import java.util.HashMap;
+import java.util.Map;
 import java.util.Scanner;
 
-public class Vote {
+public class VotingSystem {
     Scanner input = new Scanner(System.in);
+    Map<Integer, Integer> CandidatesList = new HashMap<>();
     public void getVote(){
         System.out.println("Who do you want to vote for? ");
         String choice = input.nextLine();
-        switch(choice){
-            case "1":
-
+        if(choice = )
+                Candidate.numVotes++;
+                CandidatesList.compute(1, (key, value) -> value++);;
                 break;
             case "2":
 
