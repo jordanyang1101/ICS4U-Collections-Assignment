@@ -1,12 +1,16 @@
 import java.util.HashMap;
+import java.util.InputMismatchException;
 import java.util.Map;
+import java.util.Scanner;
 
 public class Candidate {
     private String name;
     private int ID;
-    private int numVotes = 0;
+    public static int numVotes = 0;
 
-    //Map<String, Integer> votes = new HashMap<>();
+
+
+    //Map<String, Integer> candidates = new HashMap<>();
 
     public Candidate(String name, int ID){
         this.name = name;
@@ -16,7 +20,28 @@ public class Candidate {
 
     }
 
+    public static void getNumCandidates() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("How many candidates are there? ");
+        String numCandidates = input.nextLine();
+        try {
+            int intNumCandidates = Integer.valueOf(numCandidates);
+            for (int i = 0; i < intNumCandidates; i++) {
+                System.out.print("Enter the name of candidate " + (i + 1) + ": ");
+                String name = input.nextLine();
+                Candidate newcandidate = new Candidate(name, i+1);
+            }
+        } catch (NumberFormatException e) {
+            System.out.println("Invalid input");
+            getNumCandidates();
+        }
+    }
 
+    public String getName(){
+        return name;
+    }
 
-
+    public int getVotes(){
+        return numVotes;
+    }
 }
