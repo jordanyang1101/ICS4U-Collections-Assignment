@@ -1,26 +1,70 @@
-import java.util.HashMap;
-import java.util.Map;
-import java.util.Scanner;
+import java.util.*;
 
-public class VotingSystem {
+class VotingSystem {
+    private Map<Integer, Candidate> candidates;
     Scanner input = new Scanner(System.in);
-    Map<Integer, Integer> CandidatesList = new HashMap<>();
-    public void getVote(){
-        System.out.println("Who do you want to vote for? ");
-        String choice = input.nextLine();
-        if(choice = )
-                Candidate.numVotes++;
-                CandidatesList.compute(1, (key, value) -> value++);;
-                break;
-            case "2":
 
-                break;
-            case "3":
+    public VotingSystem() {
+        this.candidates = new HashMap<>();
+        this.input = new Scanner(System.in);
+    }
 
-                break;
-            default:
-                System.out.println("Invalid choice");
+    public void addCandidate(int id, String name) {
+        candidates.put(id, new Candidate(name));
+    }
 
+    public void getVote(int id) {
+        Candidate candidate = candidates.get(id);
+        if (candidate != null) {
+            candidate.addVotes();
+        } else {
+            System.out.println("Invalid candidate");
+        }
+    }
+
+    public void displayCandidates() {
+        System.out.println("Candidates:");
+        for (Map.Entry<Integer, Candidate> entry : candidates.entrySet()) {
+            System.out.println(entry.getKey() + ": " + entry.getValue().getName());
+        }
+    }
+
+    public void displayResults() {
+        System.out.println("Voting Results:");
+        for (Candidate candidate : candidates.values()) {
+            System.out.println(candidate);
+        }
+    }
+
+    public List<Candidate> getWinners() {
+        List<Candidate> winners = new ArrayList<>();
+        int maxVotes = 0;
+        for (Candidate candidate : candidates.values()) {
+            if (candidate.getVotes() > maxVotes) {
+                winners.clear();
+                winners.add(candidate);
+                maxVotes = candidate.getVotes();
+            }
+            else if (candidate.getVotes() == maxVotes) {
+                winners.add(candidate);
+            }
+        }
+        return winners;
+    }
+
+    public void getNumCandidates() {
+        System.out.print("How many candidates are there? ");
+        String numCandidatesStr = input.nextLine();
+        try {
+            int numCandidates = Integer.parseInt(numCandidatesStr);
+            for (int i = 0; i < numCandidates; i++) {
+                System.out.print("Enter the name of canidate " + (i + 1) + ": ");
+                String name = input.nextLine();
+                addCandidate(i + 1, name);
+            }
+        }
+        catch (NumberFormatException e) {
+            System.out.println("Invalid input");
         }
     }
 }
