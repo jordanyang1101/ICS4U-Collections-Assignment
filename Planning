@@ -1,0 +1,26 @@
+
+create a list to store candidates
+ask for number of candidates
+for number of candidates{
+  assign id to each candidate
+  set their number of votes to 0
+}
+
+
+start while loop{
+  ask which candidate you want to vote for
+  if -1 is eneterd{
+  exit while loop
+  }
+  else{
+    add 1 vote to them
+  }
+display results of voting
+determine winner
+if there is a tie{
+declare there is a tie between the winners
+}
+else{
+the candidate with the highest votes wins
+}
+
